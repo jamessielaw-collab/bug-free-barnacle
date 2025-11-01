@@ -187,7 +187,7 @@ export default function ServicesSection() {
               <div className="rounded-sm bg-white/40 divide-y divide-stone-300/50">
                 <Dropdown
                   title="More Info"
-                  text="Final pricing may vary depending on your preferences and the number of touch-ups required on your special day.
+                  text="I specialize in soft bridal makeup that enhances your natural beauty and ensures you glow on your wedding day. Pricing may vary based on your preferences, and travel fees are additional. Booking options are available for morning, half-day, or full-day sessions..
 
                 Travel expenses are additional and will be calculated based on your location."
                 />
