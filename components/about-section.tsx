@@ -45,7 +45,7 @@ export default function AboutSection() {
         <ScaleIn delay={0.2}>
           <div className="flex items-center justify-center pr-[150px]">
             <img
-              src="/images/carey-new-about.jpg"
+              src="/images/carey-new-about.jpeg"
               alt="Carey applying makeup to a bride"
               className="block h-[520px] lg:h-[720px] w-auto object-cover shadow-lg"
               style={{ objectPosition: 'center 20%' }}
