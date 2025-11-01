@@ -27,12 +27,12 @@ export default function SocialMediaSection() {
               position: "center top 5", // 👈 shows more of the head
             },
             {
-              src: "/images/social-image-2.jpg",
+              src: "/images/gallery-8.jpg",
               alt: "Bridesmaids",
               position: "center top 30%",
             },
             {
-              src: "/images/social-image-3.jpg",
+              src: "/images/gallery-3.jpg",
               alt: "Makeup Artist at Work",
               position: "center top 25%",
             },
