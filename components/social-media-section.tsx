@@ -22,12 +22,12 @@ export default function SocialMediaSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
             {
-              src: "/images/carey-new-about.jpg",
+              src: "/images/pre-wedding.jpg",
               alt: "Bridal Makeup",
               position: "center top 5", // 👈 shows more of the head
             },
             {
-              src: "/images/gallery-8.jpg",
+              src: "/images/Bridesmaids.jpg",
               alt: "Bridesmaids",
               position: "center top 30%",
             },
