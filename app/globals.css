@@ -160,26 +160,7 @@ body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
-
-  /* Responsive image fixes */
-img,
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* Optional: ensure containers don't clip content */
-section, div, article, figure {
-  overflow: visible;
-}
-
-/* Prevent layout shift on mobile due to viewport height issues */
-@media (max-width: 768px) {
-  img {
-    object-fit: contain;
-  }
+  
 }
 
 
