@@ -202,14 +202,14 @@ export default function ServicesSection() {
           <ScaleIn delay={0.2}>
             <div className="flex flex-col space-y-6">
               <PhotoModal
-                src="/images/bridesmaids.jpg"
+                src="/images/Bridesmaids.jpg"
                 alt="Bridesmaids"
                 maxVw={92}
                 maxVh={92}
               >
                 <ServiceImage
-                  src1x="/images/bridesmaids.jpg"
-                  src2x="/images/bridesmaids.jpg"
+                  src1x="/images/Bridesmaids.jpg"
+                  src2x="/images/Bridesmaids.jpg"
                   alt="Bridesmaids"
                   bg="bg-coral/10"
                 />
