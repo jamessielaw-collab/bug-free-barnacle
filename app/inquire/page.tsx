@@ -32,6 +32,7 @@ export default function InquirePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      
       {/* Hero Section */}
       <div className="py-12 text-center">
         <Link href="/" className="hover:opacity-70 transition-opacity">
@@ -71,61 +72,89 @@ export default function InquirePage() {
 
             {/* SERVER ACTION FORM */}
             <form action={sendContactEmail} className="space-y-8">
-  <div>
-    <input
-      name="name"
-      type="text"
-      placeholder="YOUR NAMES"
-      required
-      className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
-    />
-  </div>
+              <div>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="YOUR NAMES"
+                  required
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                />
+              </div>
 
-  <div>
-    <input
-      name="email"
-      type="email"
-      placeholder="EMAIL ADDRESS"
-      required
-      className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
-    />
-  </div>
+              <div>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="EMAIL ADDRESS"
+                  required
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                />
+              </div>
 
-  <div>
-    <input
-      name="phone"
-      type="tel"
-      placeholder="PHONE NUMBER"
-      className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
-    />
-  </div>
+              <div>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="PHONE NUMBER"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                />
+              </div>
 
-  <div>
-    <input
-      name="eventDetails"
-      type="text"
-      placeholder="EVENT DATE + LOCATION"
-      className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
-    />
-  </div>
+              <div>
+                <input
+                  name="eventDetails"
+                  type="text"
+                  placeholder="EVENT DATE + LOCATION"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                />
+              </div>
 
-  <div>
-    <textarea
-      name="message"
-      placeholder="Enter your message here"
-      required
-      rows={6}
-      className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg resize-none"
-    />
-  </div>
+              <div>
+                <textarea
+                  name="message"
+                  placeholder="Enter your message here"
+                  required
+                  rows={6}
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg resize-none"
+                />
+              </div>
 
-  <div className="pt-12">
-    <button
-      type="submit"
-      className="px-16 py-4 border-2 border-gray-400 hover:bg-gray-50 transition-colors duration-200 text-lg tracking-widest"
-    >
-      SEND
-    </button>
-  </div>
-</form>
+              <div className="pt-12">
+                <button
+                  type="submit"
+                  className="px-16 py-4 border-2 border-gray-400 hover:bg-gray-50 transition-colors duration-200 text-lg tracking-widest"
+                >
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
 
+          {/* Right Side - Rotating Gallery */}
+          <div className="relative h-[500px] lg:h-[700px] overflow-hidden rounded-lg">
+            {galleryImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={image}
+                  alt={`Gallery image ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: 'center top' }}
+                  priority={index === 0}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  )
+}
