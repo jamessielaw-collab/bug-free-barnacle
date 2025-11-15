@@ -7,10 +7,10 @@ import { sendContactEmail } from '@/app/actions/contact'
 
 export default function InquirePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  
+
   const galleryImages = [
     '/images/gallery-1.jpg',
-    '/images/gallery-2.jpg', 
+    '/images/gallery-2.jpg',
     '/images/gallery-3.jpg',
     '/images/gallery-4.jpg',
     '/images/gallery-5.jpg',
@@ -22,13 +22,30 @@ export default function InquirePage() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
       )
     }, 3000)
 
     return () => clearInterval(interval)
   }, [galleryImages.length])
+
+
+  // 🔥 MAIL FUNCTION
+  async function handleSubmit(e: any) {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+    const result = await sendContactEmail(formData)
+
+    if (result?.success) {
+      alert("Message sent! I will get back to you soon.")
+      e.target.reset()
+    } else {
+      alert("Failed to send. Please email directly at info.makeupbycarey@gmail.com")
+    }
+  }
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -70,15 +87,15 @@ export default function InquirePage() {
               or send a note directly to <a href="mailto:info.makeupbycarey@gmail.com" className="underline">info.makeupbycarey@gmail.com</a>
             </p>
 
-            {/* SERVER ACTION FORM */}
-            <form action={sendContactEmail} className="space-y-8">
+            {/* 🔥 WORKING FORM */}
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <input
                   name="name"
                   type="text"
                   placeholder="YOUR NAMES"
                   required
-                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 bg-transparent"
                 />
               </div>
 
@@ -88,7 +105,7 @@ export default function InquirePage() {
                   type="email"
                   placeholder="EMAIL ADDRESS"
                   required
-                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 bg-transparent"
                 />
               </div>
 
@@ -97,7 +114,7 @@ export default function InquirePage() {
                   name="phone"
                   type="tel"
                   placeholder="PHONE NUMBER"
-                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 bg-transparent"
                 />
               </div>
 
@@ -106,7 +123,7 @@ export default function InquirePage() {
                   name="eventDetails"
                   type="text"
                   placeholder="EVENT DATE + LOCATION"
-                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg tracking-wider"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 bg-transparent"
                 />
               </div>
 
@@ -116,14 +133,14 @@ export default function InquirePage() {
                   placeholder="Enter your message here"
                   required
                   rows={6}
-                  className="w-full pb-4 border-0 border-b-2 border-gray-300 focus:border-gray-500 focus:outline-none bg-transparent placeholder-gray-400 text-lg resize-none"
+                  className="w-full pb-4 border-0 border-b-2 border-gray-300 bg-transparent resize-none"
                 />
               </div>
 
               <div className="pt-12">
                 <button
                   type="submit"
-                  className="px-16 py-4 border-2 border-gray-400 hover:bg-gray-50 transition-colors duration-200 text-lg tracking-widest"
+                  className="px-16 py-4 border-2 border-gray-400 hover:bg-gray-50 transition-colors text-lg tracking-widest"
                 >
                   SEND
                 </button>
@@ -146,8 +163,6 @@ export default function InquirePage() {
                   fill
                   className="object-cover"
                   style={{ objectPosition: 'center top' }}
-                  priority={index === 0}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             ))}
