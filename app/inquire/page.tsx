@@ -7,6 +7,7 @@ import { sendContactEmail } from '@/app/actions/contact'
 
 export default function InquirePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [toast, setToast] = useState<string | null>(null)
 
   const galleryImages = [
     '/images/gallery-1.jpg',
@@ -30,8 +31,7 @@ export default function InquirePage() {
     return () => clearInterval(interval)
   }, [galleryImages.length])
 
-
-  // 🔥 MAIL FUNCTION
+  // Handle submit with toast popup
   async function handleSubmit(e: any) {
     e.preventDefault()
 
@@ -39,17 +39,31 @@ export default function InquirePage() {
     const result = await sendContactEmail(formData)
 
     if (result?.success) {
-      alert("Message sent! I will get back to you soon.")
+      setToast("Message sent! I will get back to you soon.")
       e.target.reset()
     } else {
-      alert("Failed to send. Please email directly at info.makeupbycarey@gmail.com")
+      setToast("Failed to send message. Please try again.")
     }
-  }
 
+    setTimeout(() => setToast(null), 4000)
+  }
 
   return (
     <div className="min-h-screen bg-white">
-      
+
+      {/* Toast popup */}
+      {toast && (
+        <div className="
+          fixed top-6 left-1/2 -translate-x-1/2
+          bg-[#c5bbaf] text-white
+          px-6 py-3 rounded-lg shadow-lg
+          text-lg tracking-wide
+          animate-fade
+        ">
+          {toast}
+        </div>
+      )}
+
       {/* Hero Section */}
       <div className="py-12 text-center">
         <Link href="/" className="hover:opacity-70 transition-opacity">
@@ -67,8 +81,8 @@ export default function InquirePage() {
 
       <div className="container mx-auto px-6 pb-16">
         <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-          
-          {/* Left Side - Form */}
+
+          {/* Form Side */}
           <div className="max-w-2xl mx-auto lg:mx-0">
             <h2 
               className="text-5xl md:text-6xl lg:text-7xl mb-12 tracking-wider"
@@ -79,7 +93,7 @@ export default function InquirePage() {
             >
               INQUIRE
             </h2>
-            
+
             <p className="text-gray-600 mb-3 text-lg" style={{ fontFamily: 'var(--font-made-mirage)' }}>
               I'd love to hear from you! Please fill out the form below
             </p>
@@ -87,7 +101,7 @@ export default function InquirePage() {
               or send a note directly to <a href="mailto:info.makeupbycarey@gmail.com" className="underline">info.makeupbycarey@gmail.com</a>
             </p>
 
-            {/* 🔥 WORKING FORM */}
+            {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <input
@@ -148,7 +162,7 @@ export default function InquirePage() {
             </form>
           </div>
 
-          {/* Right Side - Rotating Gallery */}
+          {/* Image Gallery */}
           <div className="relative h-[500px] lg:h-[700px] overflow-hidden rounded-lg">
             {galleryImages.map((image, index) => (
               <div
@@ -162,7 +176,6 @@ export default function InquirePage() {
                   alt={`Gallery image ${index + 1}`}
                   fill
                   className="object-cover"
-                  style={{ objectPosition: 'center top' }}
                 />
               </div>
             ))}
