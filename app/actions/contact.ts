@@ -2,7 +2,8 @@
 
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend("re_fcJpgFz5_KUcb9E4ppzJxibyhURKRrti8")
+
 
 export async function sendContactEmail(prevState: any, formData: FormData) {
   const name = formData.get('name') as string
