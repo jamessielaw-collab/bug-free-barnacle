@@ -19,7 +19,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
     }
   }
 
-  if (!process.env.RESEND_API_KEY) {
+  if (!resend) {
     return {
       success: false,
       message: 'Email service is not configured. Please contact the administrator.',
