@@ -11,41 +11,20 @@ export async function sendContactEmail(formData: FormData) {
   const eventDetails = formData.get('eventDetails') as string
   const message = formData.get('message') as string
 
-  if (!name || !email || !message) {
-    return {
-      success: false,
-      message: 'Please fill in all required fields.',
-    }
-  }
-
-  try {
-    await resend.emails.send({
-      from: "MakeupByCarey <info@makeupbycarey.com>",
-      to: "info.makeupbycarey@gmail.com",
-      replyTo: email,
-      subject: `New Inquiry from ${name}`,
-      html: `
-        <div>
-          <h2>New Inquiry</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Event:</strong> ${eventDetails}</p>
-          <p><strong>Message:</strong> ${message}</p>
-        </div>
-      `,
-    })
-
-    return {
-      success: true,
-      message: 'Thank you for your inquiry! I will get back to you soon.',
-    }
-
-  } catch (error) {
-    console.error("Failed to send email:", error)
-    return {
-      success: false,
-      message: 'Failed to send your message.',
-    }
-  }
+  await resend.emails.send({
+    from: "MakeupByCarey <info@makeupbycarey.com>", 
+    to: "info.makeupbycarey@gmail.com",
+    replyTo: email,
+    subject: `New Inquiry from ${name}`,
+    html: `
+      <div>
+        <h2>New Inquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Event:</strong> ${eventDetails}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      </div>
+    `
+  })
 }
