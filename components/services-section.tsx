@@ -191,7 +191,7 @@ export default function ServicesSection() {
                 />
                 <Dropdown
                   title="Pricing"
-                  text="Wedding Hair & Makeup services start from €495 ex. btw."
+                  text="Wedding Hair & Makeup services start from €495 ex VAT."
                 />
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function ServicesSection() {
                 />
                 <Dropdown
                   title="Pricing"
-                  text="From €100 ex. btw per person only for the make up."
+                  text="From €100 ex VAT per person only for the make up."
                 />
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function ServicesSection() {
                 />
                 <Dropdown
                   title="Pricing"
-                  text="Starting at €220 ex. btw per session."
+                  text="Starting at €220 ex VAT per session."
                 />
               </div>
             </div>
