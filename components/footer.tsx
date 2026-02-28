@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Logo at Top Center */}
+        {/* Logo */}
         <motion.div
           className="flex justify-center mb-8 md:mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -34,7 +34,7 @@ export default function Footer() {
           />
         </motion.div>
 
-        {/* Newsletter Section */}
+        {/* Newsletter */}
         <motion.div
           className="max-w-2xl mx-auto mb-12 md:mb-16 text-center px-4"
           initial={{ opacity: 0, y: 20 }}
@@ -64,12 +64,12 @@ export default function Footer() {
               whileTap={{ scale: 0.95 }}
             >
               Subscribe
-              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <Send className="w-4 h-4" />
             </motion.button>
           </form>
         </motion.div>
 
-        {/* Decorative Divider - Makeup Brush Stroke Inspired */}
+        {/* Divider */}
         <div className="relative h-px mb-8 md:mb-12">
           <div 
             className="absolute inset-0 h-px"
@@ -77,131 +77,134 @@ export default function Footer() {
               background: 'linear-gradient(90deg, transparent 0%, #c5bbaf 20%, #c5bbaf 80%, transparent 100%)',
               opacity: 0.3
             }}
-          ></div>
+          />
         </div>
 
-        {/* Main Content Grid - Mobile Optimized */}
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-8 md:mb-12">
-          
+
           {/* Navigate */}
           <motion.div
-            className="text-center sm:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="font-playfair text-xs sm:text-sm uppercase tracking-widest mb-4 md:mb-6" style={{ color: '#c5bbaf' }}>
+            <h3 className="font-playfair text-xs uppercase tracking-widest mb-6" style={{ color: '#c5bbaf' }}>
               Navigate
             </h3>
-            <nav className="space-y-2.5 md:space-y-3">
-              <a href="/" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Home</a>
-              <a href="#about" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">About Me</a>
-              <a href="#services" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Services</a>
-              <a href="#faq" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">FAQ</a>
+            <nav className="space-y-3 text-sm">
+              <a href="/" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Home</a>
+              <a href="#about" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">About Me</a>
+              <a href="#services" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Services</a>
+              <a href="#faq" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">FAQ</a>
             </nav>
           </motion.div>
 
           {/* Services */}
           <motion.div
-            className="text-center sm:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="font-playfair text-xs sm:text-sm uppercase tracking-widest mb-4 md:mb-6" style={{ color: '#c5bbaf' }}>
+            <h3 className="font-playfair text-xs uppercase tracking-widest mb-6" style={{ color: '#c5bbaf' }}>
               Services
             </h3>
-            <nav className="space-y-2.5 md:space-y-3">
-              <a href="/inquire" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Book Now</a>
-              <a href="#services" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Bridal Makeup</a>
-              <a href="#services" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Special Events</a>
-              <a href="#services" className="block text-stone-300 hover:text-white transition-all text-xs sm:text-sm hover:translate-x-1 inline-block">Consultations</a>
+            <nav className="space-y-3 text-sm">
+              <a href="/inquire" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Book Now</a>
+              <a href="#services" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Bridal Makeup</a>
+              <a href="#services" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Special Events</a>
+              <a href="#services" className="block text-stone-300 hover:text-white transition-all hover:translate-x-1">Consultations</a>
             </nav>
           </motion.div>
 
-          {/* Contact */}
+          {/* Connect */}
           <motion.div
-            className="text-center sm:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h3 className="font-playfair text-xs sm:text-sm uppercase tracking-widest mb-4 md:mb-6" style={{ color: '#c5bbaf' }}>
+            <h3 className="font-playfair text-xs uppercase tracking-widest mb-6" style={{ color: '#c5bbaf' }}>
               Connect
             </h3>
-            <div className="space-y-3 md:space-y-4 text-xs sm:text-sm">
-              <div className="flex items-start gap-2 justify-center sm:justify-start">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-0.5 flex-shrink-0" style={{ color: '#c5bbaf' }} />
+            <div className="space-y-4 text-sm">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5" style={{ color: '#c5bbaf' }} />
                 <span className="text-stone-300">Amsterdam, Netherlands</span>
               </div>
-              <div className="flex items-start gap-2 justify-center sm:justify-start">
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-0.5 flex-shrink-0" style={{ color: '#c5bbaf' }} />
-                <a href="mailto:info.makeupbycarey@gmail.com" className="text-stone-300 hover:text-white transition-colors break-all">
+              <div className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-0.5" style={{ color: '#c5bbaf' }} />
+                <a href="mailto:info.makeupbycarey@gmail.com" className="text-stone-300 hover:text-white transition-colors">
                   info.makeupbycarey@gmail.com
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* Social Media */}
+          {/* Social */}
           <motion.div
-            className="text-center sm:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <h3 className="font-playfair text-xs sm:text-sm uppercase tracking-widest mb-4 md:mb-6" style={{ color: '#c5bbaf' }}>
+            <h3 className="font-playfair text-xs uppercase tracking-widest mb-6" style={{ color: '#c5bbaf' }}>
               Follow Us
             </h3>
-            <div className="flex gap-3 md:gap-4 justify-center sm:justify-start">
+            <div className="flex gap-4">
               <motion.a 
                 href="https://www.instagram.com/careyyman/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all border border-stone-700 hover:border-coral"
+                className="w-12 h-12 rounded-full flex items-center justify-center border border-stone-700"
                 style={{ backgroundColor: 'rgba(197, 187, 175, 0.1)' }}
-                whileHover={{ scale: 1.1, backgroundColor: 'rgba(197, 187, 175, 0.2)' }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.1 }}
               >
-                <Instagram className="w-4.5 h-4.5 md:w-5 md:h-5" />
+                <Instagram className="w-5 h-5" />
               </motion.a>
+
               <motion.a 
                 href="mailto:info.makeupbycarey@gmail.com"
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all border border-stone-700 hover:border-coral"
+                className="w-12 h-12 rounded-full flex items-center justify-center border border-stone-700"
                 style={{ backgroundColor: 'rgba(197, 187, 175, 0.1)' }}
-                whileHover={{ scale: 1.1, backgroundColor: 'rgba(197, 187, 175, 0.2)' }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.1 }}
               >
-                <Mail className="w-4.5 h-4.5 md:w-5 md:h-5" />
+                <Mail className="w-5 h-5" />
               </motion.a>
             </div>
-            <p className="text-stone-400 text-xs mt-3 md:mt-4">
-              @careyyman
-            </p>
+            <p className="text-stone-400 text-xs mt-4">@careyyman</p>
           </motion.div>
         </div>
 
-        {/* Bottom Section - Centered */}
+        {/* Bottom Section */}
         <motion.div 
-          className="text-center space-y-3 md:space-y-4 pt-6 md:pt-8 border-t border-stone-800"
+          className="text-center space-y-3 pt-8 border-t border-stone-800"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <p className="text-stone-400 text-xs tracking-wide px-4">
+          <p className="text-stone-400 text-xs tracking-wide">
             © 2024 MakeupByCarey. Crafted with passion in Amsterdam.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs px-4">
-            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">Privacy Policy</a>
+
+          <p className="text-stone-500 text-xs tracking-wide">
+            KVK: 80274439 · VAT: NL003415104B42
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 text-xs">
+            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">
+              Privacy Policy
+            </a>
             <span className="text-stone-700">•</span>
-            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">Terms of Service</a>
+            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">
+              Terms of Service
+            </a>
           </div>
         </motion.div>
+
       </div>
     </footer>
   )
