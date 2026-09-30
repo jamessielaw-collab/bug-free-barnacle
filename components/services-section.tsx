@@ -165,14 +165,14 @@ export default function ServicesSection() {
           <ScaleIn delay={0.1}>
             <div className="flex flex-col space-y-6">
               <PhotoModal
-                src="/images/bridal-makeup-service.jpg"
+                src="/images/IMG_3700.jpeg"
                 alt="Bridal Makeup"
                 maxVw={92}
                 maxVh={92}
               >
                 <ServiceImage
-                  src1x="/images/bridal-makeup-service.jpg"
-                  src2x="/images/bridal-makeup-service.jpg"
+                  src1x="/images/IMG_3700.jpeg"
+                  src2x="/images/IMG_3700.jpeg"
                   alt="Bridal Makeup"
                   bg="bg-sage/10"
                 />
@@ -235,14 +235,14 @@ export default function ServicesSection() {
           <ScaleIn delay={0.3}>
             <div className="flex flex-col space-y-6">
               <PhotoModal
-                src="/images/pre-wedding.jpg"
+                src="/images/IMG_6505.jpeg"
                 alt="Pre-wedding"
                 maxVw={92}
                 maxVh={92}
               >
                 <ServiceImage
-                  src1x="/images/pre-wedding.jpg"
-                  src2x="/images/pre-wedding.jpg"
+                  src1x="/images/IMG_6505.jpeg"
+                  src2x="/images/IMG_6505.jpeg"
                   alt="Pre-wedding"
                   bg="bg-sage-light/20"
                 />
