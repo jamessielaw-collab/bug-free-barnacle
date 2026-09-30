@@ -190,7 +190,7 @@ export default function ServicesSection() {
                   text="I specialize in soft bridal makeup that enhances your natural beauty and ensures you glow on your wedding day. Pricing may vary based on your preferences, and travel fees are additional. Booking options are available for morning, half-day, or full-day sessions."
                 />
                 <Dropdown
-                  title="Pricing"
+                  title="Investment"
                   text="Wedding Hair & Makeup services start from €650 incl VAT."
                 />
               </div>
@@ -225,7 +225,7 @@ export default function ServicesSection() {
                   text="Hair and makeup for bridesmaids or family members can only be booked if the group consists of no more than 5 people. Travel expenses are additional and will be calculated based on your location."
                 />
                 <Dropdown
-                  title="Pricing"
+                  title="Investment"
                   text="From €150 incl VAT per person only for the make up."
                 />
               </div>
@@ -260,7 +260,7 @@ export default function ServicesSection() {
                   text="Photo-ready styling for shoots and events."
                 />
                 <Dropdown
-                  title="Pricing"
+                  title="Investment"
                   text="Starting at €250 incl VAT per session."
                 />
               </div>
