@@ -18,7 +18,13 @@ export default function InquirePage() {
     '/images/gallery-6.jpg',
     '/images/gallery-7.jpg',
     '/images/gallery-8.jpg',
-    '/images/inquire-slide-new.jpg'
+    '/images/inquire-slide-new.jpg',
+    '/images/IMG_3700.jpeg',
+    '/images/IMG_6505.jpeg',
+    '/images/IMG_7266.jpeg',
+    '/images/c1e6211a-a864-4184-9f54-95cb9a609195.jpeg',
+    '/images/0b518348-2fcf-428e-87c6-9ddb76e58499.jpeg',
+    '/images/17bd452a-ece6-4af5-96e9-35639fcda52a.jpeg'  
   ]
 
   useEffect(() => {
