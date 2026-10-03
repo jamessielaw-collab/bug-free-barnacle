@@ -44,7 +44,7 @@ export default function Header() {
               <img 
                 src="/images/makeupbycarey-logo.png"
                 alt="MakeupByCarey Logo"
-                className="h-16 w-auto"
+                className="h-18 w-auto"
               />
             </button>
           </motion.div>
