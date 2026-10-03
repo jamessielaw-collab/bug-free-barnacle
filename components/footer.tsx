@@ -28,7 +28,7 @@ export default function Footer() {
           <motion.img
             src="/images/makeupbycarey-logo.png"
             alt="MakeupByCarey Logo"
-            className="h-16 sm:h-20 md:h-24 w-auto"
+            className="h-24 sm:h-24 md:h-24 w-auto"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           />
