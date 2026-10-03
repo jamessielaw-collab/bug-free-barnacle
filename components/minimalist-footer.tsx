@@ -7,7 +7,7 @@ export default function MinimalistFooter() {
           <img
             src="/images/makeupbycarey-logo.png"
             alt="MakeupByCarey Logo"
-            className="h-20 w-auto"
+            className="h-28 w-auto"
           />
         </div>
 
