@@ -20,6 +20,7 @@ export default function Header() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
       setIsMenuOpen(false)
@@ -45,7 +46,7 @@ export default function Header() {
           </button>
 
           {/* Left desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4 lg:space-x-8">
             <motion.button
               onClick={() => scrollToSection("hero")}
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -54,6 +55,7 @@ export default function Header() {
             >
               HOME
             </motion.button>
+
             <motion.button
               onClick={() => scrollToSection("banner")}
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -62,6 +64,7 @@ export default function Header() {
             >
               ABOUT ME
             </motion.button>
+
             <motion.button
               onClick={() => scrollToSection("services")}
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -82,7 +85,7 @@ export default function Header() {
               <img
                 src="/images/makeupbycarey-logo.png"
                 alt="MakeupByCarey Logo"
-                className={`h-36 w-auto transition-opacity duration-300 ${
+                className={`h-24 lg:h-36 w-auto transition-opacity duration-300 ${
                   isScrolled ? "opacity-100" : "opacity-90"
                 }`}
               />
@@ -90,7 +93,7 @@ export default function Header() {
           </motion.div>
 
           {/* Right desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-3 lg:space-x-8">
             <motion.button
               onClick={() => scrollToSection("faq")}
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -99,6 +102,7 @@ export default function Header() {
             >
               FAQ
             </motion.button>
+
             <motion.button
               onClick={() => scrollToSection("social")}
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -107,6 +111,7 @@ export default function Header() {
             >
               SOCIALS
             </motion.button>
+
             <motion.a
               href="#footer"
               className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
@@ -121,10 +126,26 @@ export default function Header() {
             >
               CONTACT
             </motion.a>
+
+            <motion.a
+              href="/inquire"
+              className="inline-flex items-center justify-center rounded-sm bg-[#ded1c0] px-4 py-2 text-sm font-medium tracking-wide text-gray-900 transition-colors hover:bg-[#cbbba7]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              INQUIRE
+            </motion.a>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile inquire button and menu icon */}
+          <div className="md:hidden flex items-center gap-2">
+            <a
+              href="/inquire"
+              className="inline-flex items-center justify-center rounded-sm bg-[#ded1c0] px-3 py-2 text-xs font-medium tracking-wide text-gray-900 transition-colors hover:bg-[#cbbba7]"
+            >
+              INQUIRE
+            </a>
+
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -160,6 +181,7 @@ export default function Header() {
                 >
                   HOME
                 </button>
+
                 <button
                   onClick={() => scrollToSection("banner")}
                   className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
@@ -167,6 +189,7 @@ export default function Header() {
                 >
                   ABOUT ME
                 </button>
+
                 <button
                   onClick={() => scrollToSection("services")}
                   className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
@@ -174,6 +197,7 @@ export default function Header() {
                 >
                   SERVICES
                 </button>
+
                 <button
                   onClick={() => scrollToSection("faq")}
                   className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
@@ -181,6 +205,7 @@ export default function Header() {
                 >
                   FAQ
                 </button>
+
                 <a
                   href="/inquire"
                   className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
@@ -189,6 +214,7 @@ export default function Header() {
                 >
                   INQUIRE
                 </a>
+
                 <button
                   onClick={() => {
                     const footer = document.querySelector("footer")
