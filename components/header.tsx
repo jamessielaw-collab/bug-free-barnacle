@@ -45,7 +45,7 @@ export default function Header() {
             <img
               src="/images/Makeupbycarey%20logo-01.png"
               alt="MakeupByCarey"
-              className="h-14 w-auto max-w-[160px] object-contain"
+              className="h-16 w-auto max-w-[170px] object-contain"
             />
           </button>
 
