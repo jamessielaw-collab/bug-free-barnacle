@@ -45,7 +45,7 @@ export default function Header() {
             <img
               src="/images/Makeupbycarey%20logo-01.png"
               alt="MakeupByCarey"
-              className="absolute inset-0 h-full w-full scale-[1.7] object-contain"
+              className="absolute inset-0 h-full w-full -translate-x-2 scale-[1.85] object-contain"
             />
           </button>
 
