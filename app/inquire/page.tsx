@@ -24,7 +24,7 @@ const galleryImages = [
 ]
 
 const fieldClassName =
-  "w-full rounded-none border-0 border-b border-stone-300 bg-transparent px-0 py-3 text-base text-stone-800 placeholder:text-stone-400 focus:border-stone-700 focus:outline-none focus:ring-0"
+  "w-full border-0 border-b-2 border-gray-300 bg-transparent pb-4 text-base text-gray-800 placeholder:text-gray-400 focus:border-[#c5bbaf] focus:outline-none"
 
 export default function InquirePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -69,152 +69,170 @@ export default function InquirePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f6f3] text-stone-800">
+    <main className="min-h-screen bg-white">
       {toast && (
         <div
           role="status"
-          className="fixed left-4 right-4 top-4 z-50 mx-auto max-w-md rounded-md bg-stone-800 px-5 py-3 text-center text-sm text-white shadow-lg sm:left-1/2 sm:right-auto sm:w-max sm:-translate-x-1/2"
+          className="fixed left-4 right-4 top-4 z-50 mx-auto max-w-md rounded-lg bg-[#c5bbaf] px-5 py-3 text-center text-sm text-white shadow-lg sm:left-1/2 sm:right-auto sm:w-max sm:-translate-x-1/2"
         >
           {toast}
         </div>
       )}
 
-      {/* Page heading */}
-      <header className="px-5 pb-7 pt-8 text-center sm:pt-10 lg:pb-10">
-        <Link
-          href="/"
-          className="inline-block font-playfair text-lg tracking-[0.12em] text-stone-700 transition-opacity hover:opacity-70 sm:text-3xl sm:tracking-widest lg:text-5xl"
-          aria-label="MakeupByCarey, return to home"
-        >
-          MAKEUPBYCAREY
+      {/* Site name */}
+      <div className="px-4 pb-8 pt-10 text-center md:py-12">
+        <Link href="/" className="inline-block transition-opacity hover:opacity-70">
+          <span
+            className="text-2xl tracking-[0.08em] sm:text-4xl md:text-5xl lg:text-6xl lg:tracking-widest"
+            style={{
+              fontFamily: "var(--font-playfair)",
+              color: "#c5bbaf",
+            }}
+          >
+            MAKEUPBYCAREY
+          </span>
         </Link>
-        <p className="mt-3 text-xs uppercase tracking-[0.25em] text-stone-500">
-          Bridal beauty, thoughtfully created
-        </p>
-      </header>
+      </div>
 
-      <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
-          {/* Photo: first on phones, beside the form on desktop */}
-          <div className="relative order-first h-64 overflow-hidden rounded-sm bg-stone-200 sm:h-80 lg:order-last lg:h-[700px]">
+      <div className="mx-auto max-w-7xl px-5 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+        {/* Mobile heading: above the photo */}
+        <h1
+          className="mb-7 text-center text-4xl tracking-wider lg:hidden"
+          style={{
+            fontFamily: "var(--font-playfair)",
+            color: "#c5bbaf",
+          }}
+        >
+          INQUIRE
+        </h1>
+
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Form: left on desktop, below the photo on phones */}
+          <div className="order-2 mx-auto w-full max-w-2xl lg:order-1 lg:mx-0">
+            <h1
+              className="mb-12 hidden text-7xl tracking-wider lg:block"
+              style={{
+                fontFamily: "var(--font-playfair)",
+                color: "#c5bbaf",
+              }}
+            >
+              INQUIRE
+            </h1>
+
+            <p
+              className="mb-3 text-base leading-relaxed text-gray-600 sm:text-lg"
+              style={{ fontFamily: "var(--font-made-mirage)" }}
+            >
+              I&apos;d love to hear from you! Please fill out the form below
+            </p>
+            <p
+              className="mb-10 text-base leading-relaxed text-gray-600 sm:mb-12 sm:text-lg"
+              style={{ fontFamily: "var(--font-made-mirage)" }}
+            >
+              or send a note directly to{" "}
+              <a
+                href="mailto:info.makeupbycarey@gmail.com"
+                className="break-all underline underline-offset-4"
+              >
+                info.makeupbycarey@gmail.com
+              </a>
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-7 sm:space-y-8">
+              <div>
+                <label htmlFor="name" className="sr-only">
+                  Your names
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="YOUR NAMES"
+                  required
+                  className={fieldClassName}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="EMAIL ADDRESS"
+                  required
+                  className={fieldClassName}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="sr-only">
+                  Phone number
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  placeholder="PHONE NUMBER"
+                  className={fieldClassName}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="eventDetails" className="sr-only">
+                  Event date and location
+                </label>
+                <input
+                  id="eventDetails"
+                  name="eventDetails"
+                  type="text"
+                  placeholder="EVENT DATE + LOCATION"
+                  className={fieldClassName}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="sr-only">
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message here"
+                  required
+                  rows={6}
+                  className={`${fieldClassName} resize-none`}
+                />
+              </div>
+
+              <div className="pt-4 sm:pt-8">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full border-2 border-gray-400 px-16 py-4 text-lg tracking-widest transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                >
+                  {isSubmitting ? "SENDING..." : "SEND"}
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* Full photo on phones; original cropped frame on desktop */}
+          <div className="relative order-1 h-[420px] overflow-hidden bg-[#f6f4ee] sm:h-[500px] lg:order-2 lg:h-[700px] lg:rounded-lg">
             <Image
               key={galleryImages[currentImageIndex]}
               src={galleryImages[currentImageIndex]}
               alt={`MakeupByCarey gallery photo ${currentImageIndex + 1}`}
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover"
+              className="object-contain lg:object-cover"
               priority={currentImageIndex === 0}
             />
-          </div>
-
-          {/* Form */}
-          <div className="rounded-sm border border-stone-200 bg-white px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:order-first lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-stone-500">
-              Get in touch
-            </p>
-
-            <h1 className="mb-5 font-playfair text-4xl tracking-wide text-[#a99c8e] sm:text-5xl lg:text-7xl">
-              INQUIRE
-            </h1>
-
-            <p className="max-w-lg text-base leading-relaxed text-stone-600 sm:text-lg">
-              I&apos;d love to hear about your special day. Tell me what you
-              have in mind using the form below.
-            </p>
-
-            <p className="mb-8 mt-4 max-w-lg text-sm leading-relaxed text-stone-600 sm:mb-10 sm:text-base">
-              Prefer email? Write to{" "}
-              <a
-                href="mailto:info.makeupbycarey@gmail.com"
-                className="break-all underline decoration-stone-400 underline-offset-4 hover:text-stone-900"
-              >
-                info.makeupbycarey@gmail.com
-              </a>
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              <div>
-                <label htmlFor="inquire-name" className="block text-xs uppercase tracking-widest text-stone-600">
-                  Your names
-                </label>
-                <input
-                  id="inquire-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  placeholder="Your names"
-                  required
-                  className={fieldClassName}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="inquire-email" className="block text-xs uppercase tracking-widest text-stone-600">
-                  Email address
-                </label>
-                <input
-                  id="inquire-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  placeholder="Your email address"
-                  required
-                  className={fieldClassName}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="inquire-phone" className="block text-xs uppercase tracking-widest text-stone-600">
-                  Phone number
-                </label>
-                <input
-                  id="inquire-phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  placeholder="Your phone number"
-                  className={fieldClassName}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="inquire-event" className="block text-xs uppercase tracking-widest text-stone-600">
-                  Event date and location
-                </label>
-                <input
-                  id="inquire-event"
-                  name="eventDetails"
-                  type="text"
-                  placeholder="Date and location"
-                  className={fieldClassName}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="inquire-message" className="block text-xs uppercase tracking-widest text-stone-600">
-                  Your message
-                </label>
-                <textarea
-                  id="inquire-message"
-                  name="message"
-                  placeholder="Tell me about your plans..."
-                  required
-                  rows={5}
-                  className={`${fieldClassName} resize-y`}
-                />
-              </div>
-
-              <div className="pt-2 sm:pt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full rounded-sm bg-[#ded1c0] px-10 py-4 text-sm font-medium tracking-[0.2em] text-stone-900 transition-colors hover:bg-[#cbbba7] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-                >
-                  {isSubmitting ? "SENDING..." : "SEND"}
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </div>
