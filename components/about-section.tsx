@@ -31,7 +31,6 @@ export default function AboutSection() {
 
               <FadeIn delay={0.4} direction="right">
                 <p className="text-base lg:text-lg">
-                  I'm based in the Netherlands and I work in the regions of <strong>Rotterdam, The Hague</strong>.
                   Planning a destinational wedding or pre-wedding shoot? No problem, I'm happy to travel in Europe or
                   in Hongkong. I speak Dutch, English and Chinese fluently, and create a calm, welcoming atmosphere
                   for everyone involved.
