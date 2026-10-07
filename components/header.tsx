@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -33,23 +33,29 @@ export default function Header() {
         isScrolled ? "shadow-md" : "md:bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 pt-4 md:pt-0">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between pt-4 md:pt-0">
           {/* Mobile logo */}
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="md:hidden font-playfair text-xl text-gray-900 tracking-tight"
+            className="flex items-center md:hidden"
             aria-label="MakeupByCarey, back to top"
           >
-            makeupbycarey.
+            <img
+              src="/images/Makeupbycarey%20logo-01.png"
+              alt="MakeupByCarey"
+              className="h-14 w-auto max-w-[160px] object-contain"
+            />
           </button>
 
           {/* Left desktop navigation */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-8">
+          <nav className="hidden space-x-4 md:flex lg:space-x-8">
             <motion.button
               onClick={() => scrollToSection("hero")}
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -58,7 +64,9 @@ export default function Header() {
 
             <motion.button
               onClick={() => scrollToSection("banner")}
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -67,7 +75,9 @@ export default function Header() {
 
             <motion.button
               onClick={() => scrollToSection("services")}
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -75,17 +85,21 @@ export default function Header() {
             </motion.button>
           </nav>
 
-          {/* Center desktop logo */}
+          {/* Center desktop logo: original image */}
           <motion.div
-            className="hidden md:flex flex-1 justify-center"
+            className="hidden flex-1 justify-center md:flex"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <button onClick={() => scrollToSection("hero")}>
+            <button
+              type="button"
+              onClick={() => scrollToSection("hero")}
+              aria-label="MakeupByCarey, back to top"
+            >
               <img
                 src="/images/makeupbycarey-logo.png"
-                alt="MakeupByCarey Logo"
-                className={`h-24 lg:h-36 w-auto transition-opacity duration-300 ${
+                alt="MakeupByCarey"
+                className={`h-24 w-auto max-w-[120px] object-contain transition-opacity duration-300 lg:h-36 lg:max-w-[180px] ${
                   isScrolled ? "opacity-100" : "opacity-90"
                 }`}
               />
@@ -93,10 +107,12 @@ export default function Header() {
           </motion.div>
 
           {/* Right desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-3 lg:space-x-8">
+          <nav className="hidden items-center space-x-3 md:flex lg:space-x-8">
             <motion.button
               onClick={() => scrollToSection("faq")}
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -105,7 +121,9 @@ export default function Header() {
 
             <motion.button
               onClick={() => scrollToSection("social")}
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -114,7 +132,9 @@ export default function Header() {
 
             <motion.a
               href="#footer"
-              className={`${isScrolled ? "text-gray-800" : "text-white"} hover:text-coral transition-colors font-medium tracking-wide`}
+              className={`${
+                isScrolled ? "text-gray-800" : "text-white"
+              } font-medium tracking-wide transition-colors hover:text-coral`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
@@ -138,7 +158,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile inquire button and menu icon */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="flex items-center gap-2 md:hidden">
             <a
               href="/inquire"
               className="inline-flex items-center justify-center rounded-sm bg-[#ded1c0] px-3 py-2 text-xs font-medium tracking-wide text-gray-900 transition-colors hover:bg-[#cbbba7]"
@@ -149,7 +169,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-800 hover:text-coral transition-colors"
+              className="text-gray-800 transition-colors hover:text-coral"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
@@ -160,8 +180,8 @@ export default function Header() {
 
         {/* Mobile navigation */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-50 bg-white overflow-y-auto">
-            <div className="flex flex-col min-h-full">
+          <div className="fixed inset-0 z-50 overflow-y-auto bg-white md:hidden">
+            <div className="flex min-h-full flex-col">
               <div className="flex justify-end p-6">
                 <button
                   type="button"
@@ -173,10 +193,10 @@ export default function Header() {
                 </button>
               </div>
 
-              <nav className="flex-1 flex flex-col justify-center items-center gap-6 py-8">
+              <nav className="flex flex-1 flex-col items-center justify-center gap-6 py-8">
                 <button
                   onClick={() => scrollToSection("hero")}
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   HOME
@@ -184,7 +204,7 @@ export default function Header() {
 
                 <button
                   onClick={() => scrollToSection("banner")}
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   ABOUT ME
@@ -192,7 +212,7 @@ export default function Header() {
 
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   SERVICES
@@ -200,7 +220,7 @@ export default function Header() {
 
                 <button
                   onClick={() => scrollToSection("faq")}
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   FAQ
@@ -208,7 +228,7 @@ export default function Header() {
 
                 <a
                   href="/inquire"
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -223,7 +243,7 @@ export default function Header() {
                       setIsMenuOpen(false)
                     }
                   }}
-                  className="text-4xl text-gray-800 tracking-wider transition-colors hover:opacity-70"
+                  className="text-4xl tracking-wider text-gray-800 transition-colors hover:opacity-70"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   CONTACT
