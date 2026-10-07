@@ -61,7 +61,7 @@ export default function SocialMediaSection() {
         {/* Instagram Button */}
         <div className="text-center">
           <a
-            href="https://www.instagram.com/careyyman/"
+            href="https://www.instagram.com/makeupbycareyman/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white px-8 py-3 font-medium hover:opacity-90 transition-colors uppercase tracking-wide rounded-full"
