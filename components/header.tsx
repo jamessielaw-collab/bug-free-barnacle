@@ -39,13 +39,13 @@ export default function Header() {
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="flex items-center md:hidden"
+            className="relative h-14 w-[160px] flex-shrink-0 overflow-hidden md:hidden"
             aria-label="MakeupByCarey, back to top"
           >
             <img
               src="/images/Makeupbycarey%20logo-01.png"
               alt="MakeupByCarey"
-              className="h-16 w-auto max-w-[170px] object-contain"
+              className="absolute inset-0 h-full w-full scale-[1.7] object-contain"
             />
           </button>
 
@@ -85,7 +85,7 @@ export default function Header() {
             </motion.button>
           </nav>
 
-          {/* Center desktop logo: original image */}
+          {/* Center desktop logo */}
           <motion.div
             className="hidden flex-1 justify-center md:flex"
             whileHover={{ scale: 1.05 }}
